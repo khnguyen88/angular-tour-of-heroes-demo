@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Hero } from '../hero';
+import { HEROES } from '../mock-heroes';
 
 @Component({
   selector: 'app-heroes',
@@ -8,7 +9,8 @@ import { Hero } from '../hero';
 })
 export class HeroesComponent {
   // Method 1: Declare and initialize the class property, hero, as a type, Hero.
-  hero: Hero = { id: 1, name: 'Windstorm' };
+  selectedHero?: Hero;
+  heroes = HEROES;
 
   // Method 2: Declare the class property, hero, as a type, Hero, but not assign it a value.  
   // hero2: Hero;
@@ -17,4 +19,9 @@ export class HeroesComponent {
   // constructor() {
   //   this.hero2 = { id: 1, name: 'Windstorm' };
   // }
+
+  onSelect(hero: Hero): void {
+    this.selectedHero = hero;
+  }
+
 }
