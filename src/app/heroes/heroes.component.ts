@@ -10,7 +10,6 @@ import { MessageService } from '../message.service';
 })
 export class HeroesComponent {
   // Method 1: Declare and initialize the class property, hero, as a type, Hero.
-  selectedHero?: Hero;
   heroes: Hero[] = [];
 
   // Method 2: Declare the class property, hero, as a type, Hero, but not assign it a value.  
@@ -23,11 +22,6 @@ export class HeroesComponent {
 
   constructor(private heroService: HeroService, private messageService: MessageService) {
  
-  }
-  
-  onSelect(hero: Hero): void {
-    this.selectedHero = hero;
-    this.messageService.add(`HeroesComponent: Selected hero id=${hero.id}`);
   }
 
   getHeroes(): void {
