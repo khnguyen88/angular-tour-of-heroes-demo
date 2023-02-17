@@ -10,6 +10,7 @@ import { MessageService } from './message.service';
   providedIn: 'root'
 })
 export class HeroService {
+  private heroesUrl = 'api/heroes';  // URL to web api
 
   constructor( private http: HttpClient, private messageService: MessageService) { }
 
