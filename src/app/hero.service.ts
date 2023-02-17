@@ -26,5 +26,10 @@ export class HeroService {
     this.messageService.add(`HeroServices: fetched hero ${id}`);
     return of(hero);
   }
+
+  private log(message: string) {
+    this.messageService.add(`HeroServices: ${message}`);
+
+  }
   
 }
